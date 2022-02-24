@@ -3,8 +3,9 @@ package pro.sky;
 public class Main {
     public static void printBooksArray(Book[] books) {
         for (int i = 0; i < books.length; i++) {
-            System.out.println(books[i].getAuthorName().getFirstName() + " " + books[i].getAuthorName().getLastName() + " - " + books[i].getBookName() + ", " + books[i].getYearPublishing());
+            System.out.println(books[i]);
         }
+        System.out.println("=================================================================");
     }
 
     public static void main(String[] args) {
@@ -16,7 +17,9 @@ public class Main {
         books[2] = new Book("Алгоритмы. Вводный курс", author2, 2020);
         printBooksArray(books);
         books[2].setYearPublishing(2022);
-        System.out.println("=================================================================");
         printBooksArray(books);
+        if (books[0].getAuthorName().equals(books[1].getAuthorName())) {
+            System.out.println(books[0].getBookName() + " и " + books[1].getBookName() + " написаны одним автором. Автор: " + books[0].getAuthorName());
+        }
     }
 }
